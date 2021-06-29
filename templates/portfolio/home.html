@@ -10,7 +10,7 @@
     {% for project in projects %}
         <h1>{{ project.title }}</h1>
         <h3>{{ project.description }}</h3>
-        <a href="{{ project.url }}">
+        <a href="{{ project.url }}" target="_blank">
             <img src="{{ project.image.url }}" alt="{{ project.image.name }}" height="250px">
         </a>
     {% endfor %}
