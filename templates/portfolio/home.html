@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +8,9 @@
 </head>
 <body>
     <h1>Julian's Portfolio</h1>
+
+    <a href="{% static 'portfolio/resume.pdf' %}" target="_blank">View Resume</a>
+    <br />
 
     {% for project in projects %}
         <h1>{{ project.title }}</h1>
