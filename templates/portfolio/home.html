@@ -1,19 +1,8 @@
-{% load static %}
+{% extends 'base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Portfolio App</title>
-</head>
-<body>
+{% block content %}
+
     <h1>Julian's Portfolio</h1>
-
-    <a href="{% static 'portfolio/resume.pdf' %}" target="_blank">View Resume</a>
-    <br />
-
-    <a href="{% url 'blog:all_blogs' %}">Blog</a>
-    <br />
 
     {% for project in projects %}
         <h1>{{ project.title }}</h1>
@@ -22,5 +11,5 @@
             <img src="{{ project.image.url }}" alt="{{ project.image.name }}" height="250px">
         </a>
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
