@@ -7,10 +7,12 @@
 <body>
     <h1>Hello Blog Page</h1>
 
+    <h4>There are currently {{ blogs.count }} total blog{{ blogs.count|pluralize }}.</h4>
+
     {% for blog in blogs %}
         <a href="{% url 'blog:details' blog.id %}"><h2>{{ blog.title }}</h2></a>
-        <h5>{{ blog.date }}</h5>
-        <p>{{ blog.description }}</p>
+        <h5>{{ blog.date|date:'M d Y'|upper }}</h5>
+        <p>{{ blog.description|striptags|truncatechars:80 }}</p>
     {% endfor %}
 </body>
 </html>
