@@ -5,19 +5,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Julian's Portfolio</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
-    <h1>NavBar</h1>
+    <div class="navbar">
+        <ul class="nav-items">
+            <li class="nav-link">
+                <a href="{% url 'home' %}">Home</a>
+            </li>
 
-    <a href="{% url 'home' %}">Home</a>
-    <br />
+            <li class="nav-link">
+                <a href="{% static 'portfolio/resume.pdf' %}" target="_blank">Resume</a>
+            </li>
 
-    <a href="{% static 'portfolio/resume.pdf' %}" target="_blank">View Resume</a>
-    <br />
+            <li class="nav-link">
+                <a href="{% url 'blog:all_blogs' %}">Blog</a>
+            </li>
+        </ul>
+    </div>
 
-    <a href="{% url 'blog:all_blogs' %}">Blog</a>
-    <br />
-
-    {% block content %}{% endblock %}
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
 </body>
 </html>
