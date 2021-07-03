@@ -1,7 +1,8 @@
 body {
   background-image: url("../img/242.jpg");
-  background-size: contain;
+  background-size: cover;
   background-repeat: repeat;
+  background-position: center;
   margin: 0;
 }
 
@@ -10,7 +11,20 @@ h1 {
 }
 
 .container {
-  padding: 5em 8em;
+  padding: 5em 6em;
+}
+
+.page-title-container {
+  text-align: center;
+  margin: 2em 0;
+}
+
+.page-title {
+  padding: 8px;
+  font-size: 2.5em;
+  font-weight: bold;
+  background-color: skyblue;
+  border-radius: 0.25em;
 }
 
 .navbar {
@@ -57,6 +71,11 @@ h1 {
   display: block;
   position: relative;
   margin: 0 1em;
+  border-radius: 0.5em;
+}
+
+.project-item:hover {
+  box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
 .project-item-image {
@@ -71,7 +90,7 @@ h1 {
 .project-item-content {
   transition: .5s ease;
   opacity: 0;
-  text-align: left;
+  text-align: center;
   user-select: none;
   cursor: pointer;
   position: absolute;
@@ -97,6 +116,8 @@ h1 {
 }
 
 .blog-items {
+  width: 50%;
+  margin: 0 auto;
   padding: 1em;
   background-color: whitesmoke;
   border-radius: 0.5em;

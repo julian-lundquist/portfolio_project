@@ -2,7 +2,9 @@
 
 {% block content %}
 
-    <h1>Hello Blog Page</h1>
+    <div class="page-title-container">
+        <span class="page-title">Hello Blog Page</span>
+    </div>
 
     <div class="blog-items">
         <span class="blog-items-count">There are currently {{ blogs.count }} total blog{{ blogs.count|pluralize }}.</span>

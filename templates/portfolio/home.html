@@ -2,7 +2,9 @@
 
 {% block content %}
 
-    <h1>Julian's Portfolio</h1>
+    <div class="page-title-container">
+        <span class="page-title">Julian's Portfolio</span>
+    </div>
 
     <div class="project-items">
         {% for project in projects %}
@@ -11,6 +13,7 @@
                     <img class="project-item-image" src="{{ project.image.url }}" alt="{{ project.image.name }}">
                     <div class="project-item-content">
                         <h2>{{ project.title }}</h2>
+                        <h4>Click to View</h4>
                         <h3 class="project-item-description">{{ project.description }}</h3>
                     </div>
                 </div>
