@@ -4,12 +4,16 @@
 
     <h1>Hello Blog Page</h1>
 
-    <h4>There are currently {{ blogs.count }} total blog{{ blogs.count|pluralize }}.</h4>
+    <div class="blog-items">
+        <span class="blog-items-count">There are currently {{ blogs.count }} total blog{{ blogs.count|pluralize }}.</span>
 
-    {% for blog in blogs %}
-        <a href="{% url 'blog:details' blog.id %}"><h2>{{ blog.title }}</h2></a>
-        <h5>{{ blog.date|date:'M d Y'|upper }}</h5>
-        <p>{{ blog.description|striptags|truncatechars:80 }}</p>
-    {% endfor %}
+        {% for blog in blogs %}
+            <div class="blog-item">
+                <a href="{% url 'blog:details' blog.id %}"><h2>{{ blog.title }}</h2></a>
+                <h5>{{ blog.date|date:'M d Y'|upper }}</h5>
+                <p>{{ blog.description|striptags|truncatechars:80 }}</p>
+            </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}

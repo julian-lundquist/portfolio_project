@@ -4,12 +4,18 @@
 
     <h1>Julian's Portfolio</h1>
 
-    {% for project in projects %}
-        <h1>{{ project.title }}</h1>
-        <h3>{{ project.description }}</h3>
-        <a href="{{ project.url }}" target="_blank">
-            <img src="{{ project.image.url }}" alt="{{ project.image.name }}" height="250px">
-        </a>
-    {% endfor %}
+    <div class="project-items">
+        {% for project in projects %}
+            <a href="{{ project.url }}" target="_blank" style="color: black">
+                <div class="project-item">
+                    <img class="project-item-image" src="{{ project.image.url }}" alt="{{ project.image.name }}">
+                    <div class="project-item-content">
+                        <h2>{{ project.title }}</h2>
+                        <h3 class="project-item-description">{{ project.description }}</h3>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
 
 {% endblock %}
