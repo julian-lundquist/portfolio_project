@@ -68,12 +68,15 @@ p {
 }
 
 .project-items {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+  grid-gap: 1em;
   justify-content: center;
 }
 
 .project-item {
-  display: block;
+  display: flex;
+  flex-direction: column;
   position: relative;
   margin: 0 1em;
   border-radius: 0.5em;
@@ -84,7 +87,7 @@ p {
 }
 
 .project-item-image {
-  height: 250px;
+  height: 450px;
   opacity: 1;
   display: block;
   transition: .5s ease;
